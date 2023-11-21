@@ -56,7 +56,7 @@ class DBHelper{
     }
     
     func insertEmployeeRecord(empId : Int, empName : String){
-        let insertQueryString = "INSERT INTO Employee(EmpId,EmpName) VALUES(?,?);"
+        let insertQueryString = "INSERT INTO employee(EmpId,EmpName) VALUES(?,?);"
         var insertStatement : OpaquePointer? = nil
         if sqlite3_prepare_v2(db,
                               insertQueryString,
@@ -76,9 +76,8 @@ class DBHelper{
         sqlite3_finalize(insertStatement)
     }
     
-    
     func deleteEmployeeRecord(empId : Int){
-        let deleteQueryString = "DELETE FROM Employee WHERE EmpId = ?;"
+        let deleteQueryString = "DELETE FROM employee WHERE EmpId = ?;"
         var deleteStatement : OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteQueryString, -1, &deleteStatement, nil) == SQLITE_OK{
             print("Delete Statement Prepared Successfully")
@@ -88,6 +87,32 @@ class DBHelper{
         }
         sqlite3_finalize(deleteStatement)
     }
-
     
+    func retriveEmployeeRecords()->[Employee]{
+        var employees : [Employee] = []
+        var retriveEmployeeQueryString = "SELECT * FROM employee;"
+        var retriveStatement : OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db,
+                              retriveEmployeeQueryString,
+                              -1,
+                              &retriveStatement,
+                              nil) == SQLITE_OK {
+            print("Retrive Statement Preparation is successful")
+            while sqlite3_step(retriveStatement) == SQLITE_ROW{
+                let retrivedEmployeeId = sqlite3_column_int(retriveStatement, 0)
+                let retrivedEmployeeName = String(describing: String(cString: sqlite3_column_text(retriveStatement, 1)))
+                
+                let employeeObjectRertived = Employee(
+                    empId: Int(retrivedEmployeeId),
+                    empName: retrivedEmployeeName)
+                employees.append(employeeObjectRertived)
+                print("\(retrivedEmployeeId) -- \(retrivedEmployeeName)")
+            }
+        } else {
+            print("retrive Statement Preparation Failed")
+        }
+        sqlite3_finalize(retriveStatement)
+        return employees
+    }
 }

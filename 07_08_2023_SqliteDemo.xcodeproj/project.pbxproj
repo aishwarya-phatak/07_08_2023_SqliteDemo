@@ -14,6 +14,7 @@
 		68AC1E312AF8B01F00826D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AC1E2F2AF8B01F00826D10 /* Main.storyboard */; };
 		68AC1E332AF8B02300826D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AC1E322AF8B02300826D10 /* Assets.xcassets */; };
 		68AC1E362AF8B02300826D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AC1E342AF8B02300826D10 /* LaunchScreen.storyboard */; };
+		68CFB5272B0C6A6D0010519A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CFB5262B0C6A6D0010519A /* Employee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		68AC1E322AF8B02300826D10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68AC1E352AF8B02300826D10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68AC1E372AF8B02300826D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CFB5262B0C6A6D0010519A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				68AC1E342AF8B02300826D10 /* LaunchScreen.storyboard */,
 				68AC1E372AF8B02300826D10 /* Info.plist */,
 				6841F31D2AF9F70E005A98D6 /* DBHelper.swift */,
+				68CFB5262B0C6A6D0010519A /* Employee.swift */,
 			);
 			path = 07_08_2023_SqliteDemo;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				68AC1E2E2AF8B01F00826D10 /* ViewController.swift in Sources */,
 				68AC1E2A2AF8B01F00826D10 /* AppDelegate.swift in Sources */,
 				68AC1E2C2AF8B01F00826D10 /* SceneDelegate.swift in Sources */,
+				68CFB5272B0C6A6D0010519A /* Employee.swift in Sources */,
 				6841F31E2AF9F70E005A98D6 /* DBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
